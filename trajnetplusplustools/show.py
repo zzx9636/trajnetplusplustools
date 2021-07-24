@@ -1,7 +1,7 @@
 from contextlib import contextmanager
 
-%matplotlib inline
 import matplotlib.pyplot as plt
+from IPython.display import display
 
 
 @contextmanager
@@ -14,6 +14,7 @@ def canvas(image_file=None, **kwargs):
     fig.set_tight_layout(True)
     if image_file:
         fig.savefig(image_file, dpi=300)
+    display(fig)
     #fig.show()
     #plt.close(fig)
 
@@ -53,7 +54,6 @@ def paths(input_paths, output_file=None):
 
         # frame
         ax.legend()
-        plt.show()
 
 @contextmanager
 def interaction_path(path, neigh, kalman=None, output_file=None, obs_len=9):
@@ -142,4 +142,3 @@ def predicted_paths(input_paths, pred_paths, pred_neigh_paths=None, output_file=
 
         # frame
         ax.legend()
-        plt.show()
