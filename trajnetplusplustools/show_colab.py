@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 
 def predicted_paths(input_paths, pred_paths, pred_neigh_paths=None, output_file=None):
+    print("hello")
     """Context to plot paths."""
     fig, ax = plt.subplots(figsize=(8, 8))
     ax.grid(linestyle='dotted')
