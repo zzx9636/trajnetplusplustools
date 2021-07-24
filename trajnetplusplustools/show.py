@@ -12,9 +12,8 @@ def canvas(image_file=None, **kwargs):
     fig.set_tight_layout(True)
     if image_file:
         fig.savefig(image_file, dpi=300)
-    print("try to show plots")
     fig.show()
-    #plt.close(fig)
+    plt.close(fig)
 
 
 @contextmanager

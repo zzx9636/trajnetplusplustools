@@ -7,15 +7,11 @@ def canvas(image_file=None, **kwargs):
     """Generic matplotlib context."""
     fig, ax = plt.subplots(**kwargs)
 
-    yield ax
+    yield (ax, fig)
 
     fig.set_tight_layout(True)
     if image_file:
         fig.savefig(image_file, dpi=300)
-    print("try to show plots")
-    fig.show()
-    #plt.close(fig)
-
 
 @contextmanager
 def paths(input_paths, output_file=None):
@@ -90,7 +86,8 @@ def interaction_path(path, neigh, kalman=None, output_file=None, obs_len=9):
 @contextmanager
 def predicted_paths(input_paths, pred_paths, pred_neigh_paths=None, output_file=None):
     """Context to plot paths."""
-    with canvas(output_file, figsize=(8, 8)) as ax:
+    with canvas(output_file, figsize=(8, 8)) as ax_fig:
+        ax, fig = ax_fig
         ax.grid(linestyle='dotted')
         ax.set_aspect(1.0, 'datalim')
         ax.set_xlabel('x [m]')
@@ -140,3 +137,4 @@ def predicted_paths(input_paths, pred_paths, pred_neigh_paths=None, output_file=
 
         # frame
         ax.legend()
+        return fig
