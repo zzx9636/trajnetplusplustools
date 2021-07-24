@@ -1,6 +1,8 @@
 from contextlib import contextmanager
 
+%matplotlib inline
 import matplotlib.pyplot as plt
+
 
 @contextmanager
 def canvas(image_file=None, **kwargs):
