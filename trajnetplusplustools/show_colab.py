@@ -50,5 +50,6 @@ def predicted_paths(input_paths, pred_paths, pred_neigh_paths=None, output_file=
 
     # frame
     ax.legend()
+    print(fig)
     return fig
 
