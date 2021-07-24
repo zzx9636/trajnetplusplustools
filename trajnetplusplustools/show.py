@@ -1,4 +1,5 @@
 from contextlib import contextmanager
+%matplotlib notebook
 
 import matplotlib.pyplot as plt
 from IPython.display import display
