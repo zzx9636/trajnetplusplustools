@@ -15,6 +15,7 @@ def canvas(image_file=None, **kwargs):
     if image_file:
         fig.savefig(image_file, dpi=300)
     display(fig)
+    print("try to show plots")
     fig.show()
     #plt.close(fig)
 
