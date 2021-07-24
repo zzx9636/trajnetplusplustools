@@ -2,6 +2,7 @@ import argparse
 
 from .reader import Reader
 from . import show
+import matplotlib.pyplot as plt
 
 
 def main():

@@ -4,6 +4,7 @@ import numpy as np
 
 from . import load_all
 from . import show
+import matplotlib.pyplot as plt
 
 
 def compute_theta_vr(path, obs_length=9):
@@ -70,6 +71,7 @@ def dataset_plots(input_file, n_theta=64, vr_max=2.5, vr_n=10, obs_length=9):
         ax.hist([vr for theta_bin in unbinned_vr for vr in theta_bin],
                 bins=20, range=(0.0, vr_max))
         ax.set_xlabel('$v_r$ [m/s]')
+    plt.show()
 
 
 def main():
