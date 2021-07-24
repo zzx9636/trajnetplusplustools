@@ -83,7 +83,6 @@ def interaction_path(path, neigh, kalman=None, output_file=None, obs_len=9):
         # frame
         ax.legend()
 
-@contextmanager
 def predicted_paths(input_paths, pred_paths, pred_neigh_paths=None, output_file=None):
     """Context to plot paths."""
     with canvas(output_file, figsize=(8, 8)) as ax_fig:
@@ -92,8 +91,6 @@ def predicted_paths(input_paths, pred_paths, pred_neigh_paths=None, output_file=
         ax.set_aspect(1.0, 'datalim')
         ax.set_xlabel('x [m]')
         ax.set_ylabel('y [m]')
-
-        yield ax
 
         # primary
         xs = [r.x for r in input_paths[0]]
@@ -138,3 +135,4 @@ def predicted_paths(input_paths, pred_paths, pred_neigh_paths=None, output_file=
         # frame
         ax.legend()
         return fig
+
