@@ -1,9 +1,8 @@
 import matplotlib.pyplot as plt
 
-def predicted_paths(input_paths, pred_paths, pred_neigh_paths=None, output_file=None):
-    print("hello")
+def predicted_paths(input_paths, pred_paths, ax, pred_neigh_paths=None, output_file=None):
+  
     """Context to plot paths."""
-    fig, ax = plt.subplots(figsize=(8, 8))
     ax.grid(linestyle='dotted')
     ax.set_aspect(1.0, 'datalim')
     ax.set_xlabel('x [m]')
@@ -51,6 +50,6 @@ def predicted_paths(input_paths, pred_paths, pred_neigh_paths=None, output_file=
 
     # frame
     ax.legend()
-    print(fig)
-    return fig
+    # print(fig)
+    # return fig
 
